@@ -1,6 +1,6 @@
 def Train(x, y):
     """
-    Processo de treinamento = Neurônio que realiza uma regressão linear dada a entrada x e a saida deseja y
+    Neurônio que realiza uma regressão linear dada a entrada x e a saida deseja y
     :param x: valores de entrada
     :param y: valores desejados
     :return: w, b (coeficiente angular e o coeficiente linear da melhor reta encontrada)
