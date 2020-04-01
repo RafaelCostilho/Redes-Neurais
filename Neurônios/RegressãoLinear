@@ -1,0 +1,35 @@
+def Train(x, y):
+    """
+    Processo de treinamento = Neurônio que realiza uma regressão linear dada a entrada x e a saida deseja y
+    :param x: valores de entrada
+    :param y: valores desejados
+    :return: w, b (coeficiente angular e o coeficiente linear da melhor reta encontrada)
+    """
+
+    # w: peso (coefiente angular)
+    # b: bias (coeficiente linear)
+    w = 2
+    b = 0
+
+    # txa_w: taxa de aprendizagem de w
+    # txa_b: taxa de aprendizagem de b
+    txa_w = 0.000001
+    txa_b = 0.00001
+
+    # A variável epocas são quantas vezes o neurônio tentará aproximar-se de todos os valores desejados.
+    epocas = 50
+    for r in range(0, epocas):
+        for s in range(0, 3518):
+        
+            reg = (w*x[s]) + b
+            
+            e = reg - y[s]
+            
+            w = w - e*txa_w
+            b = b - e*txa_b
+
+        # Mostra os valores do peso e da bias após cada época.
+        print(w)
+        print(b)
+    
+    return w, b
