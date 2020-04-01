@@ -1,0 +1,39 @@
+"""NEURÔNIO PERCEPTRON CRIADO EM 1958 POR ROSENBLATT
+Possui tanto as entradas quanto as saídas como valores binários
+Este neurônio é o mais fundamental de todos os artificial, apesar de não ser mais tão usado, é ideal para um primeiro entendimento.
+Ex: Você classificar se uma imagem é cachorro ou gato
+Ex: Você classificar se uma pessoa vai ou não morrer em uma cirurgia"""
+
+# Função de ativação (Esta é a famosa função step ou função degrau)
+def f(number):
+    if number >= 0:
+        return 1
+    else:
+        return 0
+
+# Processo de treinamento do Percetron
+def Train(X, d, epocas, txa=0.01):
+    """
+    Este neurônio tenta realizar um classificação binário
+    :param X: Entradas
+    :param d: Saídas desejadas
+    :param txa: Taxa de aprendizagem
+    """
+
+    w1 = 1  # Peso da entrada 1
+    w2 = 2  # Peso da entrada 2
+
+    b = -2  # Bias
+
+    epoca = 0
+    while epoca < epocas:
+        for r in range(0, 4):
+            y = f(w1*x[r][0] + w2*x[r][1] + b)
+            e = d[r] - y
+
+            w1 = w1 - txa*e
+            w2 = w2 - txa*e
+            b = b - txa*e*10
+        epoca += 1
+
+    return w1, w2, b
