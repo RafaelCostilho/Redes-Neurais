@@ -12,9 +12,9 @@ def f(number):
         return 0
 
 # Processo de treinamento do Percetron
-def Train(X, d, epocas, txa=0.01):
+def Train(X, d, epocas, txa=0.1):
     """
-    Este neurônio tenta realizar um classificação binário
+    Este neurônio realiza uma classificação binária para problemas linearmente independentes
     :param X: Entradas
     :param d: Saídas desejadas
     :param txa: Taxa de aprendizagem
@@ -31,8 +31,8 @@ def Train(X, d, epocas, txa=0.01):
             y = f(w1*x[r][0] + w2*x[r][1] + b)
             e = d[r] - y
 
-            w1 = w1 - txa*e
-            w2 = w2 - txa*e
+            w1 = w1 - txa*e*w1
+            w2 = w2 - txa*e*w2
             b = b - txa*e*10
         epoca += 1
 
